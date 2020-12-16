@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * is_palindrome - checks if a singly linked list is palindrome
@@ -31,13 +32,10 @@ int is_palindrome(listint_t **head)
 		}
 		else
 		{
-			if (size % 2 == 0)
+			if (list[size - i - 1] != temp->n)
 			{
-				if (list[size - i - (size % 2) - 1] != temp->n)
-				{
-					free(list);
-					return (0);
-				}
+				free(list);
+				return (0);
 			}
 		}
 		temp = temp->next;
