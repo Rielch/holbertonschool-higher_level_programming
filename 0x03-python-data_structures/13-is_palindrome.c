@@ -21,24 +21,27 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 		size++;
 	}
-	list = malloc(sizeof(int) * size);
+	list = malloc(sizeof(int) * ((size / 2) + (size % 2)));
 	temp = *head;
-	size = 0;
 	while (temp != NULL)
 	{
-		list[size] = temp->n;
-		temp = temp->next;
-		size++;
-	}
-	while (i < size)
-	{
-		if (list[i] != list[size - 1])
+		if (i < ((size / 2) + (size % 2)))
 		{
-			free(list);
-			return (0);
+			list[i] = temp->n;
 		}
+		else
+		{
+			if (size % 2 == 0)
+			{
+				if (list[size - i - (size % 2) - 1] != temp->n)
+				{
+					free(list);
+					return (0);
+				}
+			}
+		}
+		temp = temp->next;
 		i++;
-		size--;
 	}
 	free(list);
 	return (1);
