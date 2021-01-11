@@ -9,22 +9,26 @@ def matrix_divided(matrix, div):
     div has to be a number and can't be 0
     """
     if type(matrix) is not list:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
     a = 0
     if len(matrix) != 0 and type(matrix[0]) is list:
         a = len(matrix[0])
     else:
         print("Error")
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
     for row in matrix:
         if type(row) is not list:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
         if len(row) != a:
             raise TypeError("Each row of the matrix must have the same size")
         if len(row) != 0:
             for element in row:
                 if type(element) is not float and type(element) is not int:
-                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                    raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == 0:
