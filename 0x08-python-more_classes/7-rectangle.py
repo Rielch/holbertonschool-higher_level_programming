@@ -6,6 +6,8 @@ class Rectangle:
     """Creates and defines a rectangle
     The rectangle has width and height
     """
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializates the rectangle
@@ -23,6 +25,7 @@ class Rectangle:
 
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -79,8 +82,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
 
-        return ((("#" * self.__width) + "\n") * (self.__height - 1))\
-            + ("#" * self.__width)
+        return (((Rectangle.print_symbol * self.__width) + "\n") *\
+                (self.__height - 1)) + (Rectangle.print_symbol * self.__width)
 
     def __repr__(self):
         """determines the repr method"""
@@ -92,3 +95,4 @@ class Rectangle:
         """deletes an instance of Rectangle"""
 
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
