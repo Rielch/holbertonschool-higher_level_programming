@@ -85,5 +85,5 @@ class Rectangle:
     def __repr__(self):
         """determines the repr method"""
 
-        return "Rectangle(" + str(self.__width) + ","\
+        return "Rectangle(" + str(self.__width) + ", "\
             + str(self.__height) + ")"
