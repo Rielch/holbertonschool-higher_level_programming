@@ -25,7 +25,7 @@ class Rectangle:
 
         self.__width = width
         self.__height = height
-        Rectangle.number_of_instances += 1
+        self.number_of_instances += 1
 
     @property
     def width(self):
@@ -82,8 +82,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
 
-        return ((Rectangle.print_symbol * self.__width) + "\n")\
-            * (self.__height - 1) + (Rectangle.print_symbol * self.__width)
+        return ((str(self.print_symbol) * self.__width) + "\n")\
+            * (self.__height - 1) + (str(self.print_symbol) * self.__width)
 
     def __repr__(self):
         """determines the repr method"""
@@ -95,4 +95,4 @@ class Rectangle:
         """deletes an instance of Rectangle"""
 
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        self.number_of_instances -= 1
