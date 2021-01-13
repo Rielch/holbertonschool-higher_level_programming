@@ -12,8 +12,14 @@ def text_indentation(text):
     my_list = [".", "?", ":"]
 
     for i in range(len(text)):
-        if text[i - 1] in my_list and text[i] is " ":
-            pass
+        if text[i] is " ":
+            a = 0
+            while text[i - a] is " ":
+                a += 1
+            if text[i - a] in my_list:
+                pass
+            else:
+                print(text[i], end="")
         elif text[i] in my_list:
             print("{}\n".format(text[i]))
         else:
