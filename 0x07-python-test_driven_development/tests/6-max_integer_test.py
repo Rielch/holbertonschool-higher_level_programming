@@ -21,6 +21,7 @@ class max_integer_test(unittest.TestCase):
         self.assertEqual(max_integer([-200, 14.5, 20]), 20)
         self.assertEqual(max_integer([-200, -300]), -200)
         self.assertEqual(max_integer("hello world"), "w")
+        self.assertEqual(max_integer([3]), 3)
 
     def testFalse(self):
         """test imposible cases"""

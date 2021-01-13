@@ -59,5 +59,7 @@ Now use this:
     ...
     ValueError: cannot convert float NaN to integer
 
-    >>> add_integer(1.2 ** 400)
-    47043369321622202265752557322338
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
