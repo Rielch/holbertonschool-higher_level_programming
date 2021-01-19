@@ -1,0 +1,28 @@
+The "1-my_list" module
+======================
+
+Using "MyList"
+--------------
+
+Test file for the class method print_sorted. First import MyList from the 1-my_list module.
+
+     >>> MyList = __import__('1-my_list').MyList
+
+Now use this:
+
+    >>> new_list = MyList([2, 5, -4, 10])
+
+    >>> new_list.print_sorted()
+    [-4, 2, 5, 10]
+
+    >>> new_list = MyList([])
+    >>> new_list.print_sorted()
+    []
+
+    >>> new_list = MyList([4])
+    >>> new_list.print_sorted()
+    [4]
+
+    >>> new_list = MyList()
+    >>> new_list.print_sorted()
+    []
