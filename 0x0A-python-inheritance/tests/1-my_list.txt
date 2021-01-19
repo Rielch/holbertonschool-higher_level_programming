@@ -26,3 +26,13 @@ Now use this:
     >>> new_list = MyList()
     >>> new_list.print_sorted()
     []
+
+    >>> new_list = MyList(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'NoneType' object is not iterable
+
+    >>> new_list = MyList([2, 4], [3, 6])
+    Traceback (most recent call last):
+    ...
+    TypeError: list() takes at most 1 argument (2 given)
