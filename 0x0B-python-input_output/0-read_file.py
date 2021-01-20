@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Reads a text file and prints it to standard output"""
-import os
 
 
 def read_file(filename=""):
