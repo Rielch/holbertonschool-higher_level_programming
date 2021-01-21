@@ -18,7 +18,7 @@ class Student:
             for element in attrs:
                 if type(element) is not str:
                     i += 1
-            if a == 0:
+            if i == 0:
                 for element in attrs:
                     if element in self.__dict__:
                         new_dict[element] = self.__dict__[element]
