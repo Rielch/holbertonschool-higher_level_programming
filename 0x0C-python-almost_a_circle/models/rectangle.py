@@ -76,15 +76,14 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle instance in stdout"""
-        print(("\n" * self.__y) + ((
-            (" " * self.__x) + ("#" * self.__width) + "\n")
-                               ) * self.__height, end="")
+        print(("\n" * self.__y) + (((" " * self.__x) + ("#" * self.__width) +
+                                    "\n")) * self.__height, end="")
 
     def __str__(self):
         """Return the Rectangle instance characterristics"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                     self.__y, self.__width,
-                                                     self.__height)
+                                                       self.__y, self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """Updates the values of the Rectangle instance"""
