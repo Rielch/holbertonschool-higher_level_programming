@@ -2,6 +2,8 @@
 """Defines the Base class"""
 import json
 import csv
+import turtle
+import tkinter
 
 
 class Base:
@@ -92,3 +94,52 @@ class Base:
                     element[key] = int(element[key])
                 objs_list.append(cls.create(**element))
         return objs_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw all rectangles and squares given in the lists"""
+        root = tkinter.Tk()
+        myCanvas = tkinter.Canvas(root, bg="white", height=1024, width=768)
+        t = turtle.RawTurtle(myCanvas)
+        colors = ["blue", "red", "green", "purple", "pink", "brown",
+                  "lightblue", "yellow", "orange", "grey", "black"]
+        i = 0
+        t.shape("turtle")
+        t.penup()
+        for rectangle in list_rectangles:
+            t.pencolor(colors[i % len(colors)])
+            t.fillcolor(colors[i % len(colors)])
+            i += 1
+            t.forward(rectangle.x)
+            t.right(90)
+            t.forward(rectangle.y)
+            t.left(90)
+            t.pendown()
+            for a in range(2):
+                t.forward(rectangle.width)
+                t.right(90)
+                t.forward(rectangle.height)
+                t.right(90)
+            t.penup()
+            t.backward(rectangle.x)
+            t.right(90)
+            t.forward(rectangle.height + 1)
+            t.left(90)
+        for square in list_squares:
+            t.pencolor(colors[i % len(colors)])
+            t.fillcolor(colors[i % len(colors)])
+            i += 1
+            t.forward(square.x)
+            t.right(90)
+            t.forward(square.y)
+            t.left(90)
+            t.pendown()
+            for a in range(4):
+                t.forward(square.size)
+                t.right(90)
+            t.penup()
+            t.backward(square.x)
+            t.right(90)
+            t.forward(square.size + 1)
+            t.left(90)
+        myCanvas.pack()
