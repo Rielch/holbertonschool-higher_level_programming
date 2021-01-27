@@ -37,7 +37,7 @@ class Rectangle(Base):
     def height(self, value):
         """Changes the value of the private attribute height"""
         if type(value) is not int:
-            raise TypeError("heigth must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -76,12 +76,12 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle instance in stdout"""
-        print(("\n" * self.__y) + (((" " * self.__x) + ("#" * self.__width)
-                                    + "\n")) * self.__height, end="")
+        print(("\n" * self.__y) + (((" " * self.__x) + ("#" * self.__width) +
+                                    "\n")) * self.__height, end="")
 
     def __str__(self):
         """Return the Rectangle instance characterristics"""
-        return "[Rectangle] ({}) {}/{} {}/{}".format(self.id, self.__x,
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                                                      self.__y, self.__width,
                                                      self.__height)
 

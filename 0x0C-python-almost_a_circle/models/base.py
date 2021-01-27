@@ -20,6 +20,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Transforms a dictionary representation to a JSON string"""
+        if list_dictionaries == None:
+            list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -53,12 +55,15 @@ class Base:
     def load_from_file(cls):
         """Returns a list of instances"""
         obj_list = []
-        with open(cls.__name__ + ".json", encoding="utf-8") as load:
-            load_str = load.read()
-            load_list = cls.from_json_string(load_str)
-            for element in load_list:
-                obj_list.append(cls.create(**element))
-        return obj_list
+        try:
+            with open(cls.__name__ + ".json", encoding="utf-8") as load:
+                load_str = load.read()
+                load_list = cls.from_json_string(load_str)
+                for element in load_list:
+                    obj_list.append(cls.create(**element))
+            return obj_list
+        except:
+            return obj_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
