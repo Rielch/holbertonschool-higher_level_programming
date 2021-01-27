@@ -76,8 +76,9 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle instance in stdout"""
-        print(("\n" * self.__y) + (((" " * self.__x) + ("#" * self.__width) +
-                                    "\n")) * self.__height, end="")
+        print(("\n" * self.__y) + ((
+            (" " * self.__x) + ("#" * self.__width) + "\n")
+                               ) * self.__height, end="")
 
     def __str__(self):
         """Return the Rectangle instance characterristics"""
