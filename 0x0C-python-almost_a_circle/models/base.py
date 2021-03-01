@@ -99,13 +99,14 @@ class Base:
     def draw(list_rectangles, list_squares):
         """Draw all rectangles and squares given in the lists"""
         root = tkinter.Tk()
-        myCanvas = tkinter.Canvas(root, bg="white", height=1024, width=768)
+        myCanvas = tkinter.Canvas(root, bg="white", height=768, width=1024)
         t = turtle.RawTurtle(myCanvas)
         colors = ["blue", "red", "green", "purple", "pink", "brown",
                   "lightblue", "yellow", "orange", "grey", "black"]
         i = 0
         t.shape("turtle")
         t.penup()
+        t.setpos(-500, 300)
         for rectangle in list_rectangles:
             t.pencolor(colors[i % len(colors)])
             t.fillcolor(colors[i % len(colors)])
@@ -143,3 +144,4 @@ class Base:
             t.forward(square.size + 1)
             t.left(90)
         myCanvas.pack()
+        root.mainloop()
