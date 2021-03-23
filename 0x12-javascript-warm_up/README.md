@@ -1,0 +1,1 @@
+Gabriel Prochnau`s directory for "Project: 0x12. JavaScript - Warm up" from Holberton School
