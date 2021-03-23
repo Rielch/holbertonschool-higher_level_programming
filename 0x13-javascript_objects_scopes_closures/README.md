@@ -1,0 +1,1 @@
+Gabriel Prochnau`s directory for "0x13. JavaScript - Objects, Scopes and Closures" from Holberton School
