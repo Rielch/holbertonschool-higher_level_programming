@@ -1,4 +1,4 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
-  return list.reverse();
+  const size = list.length();
 };
