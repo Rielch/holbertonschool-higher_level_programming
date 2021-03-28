@@ -19,7 +19,7 @@ if __name__ == "__main__":
                        .format(argv[4]))
         rows = cursor.fetchall()
         for row in rows:
-            if row[1] is argv[4]:
+            if row[1] == argv[4]:
                 print(row)
     except MySQLdb.Error as e:
         try:
