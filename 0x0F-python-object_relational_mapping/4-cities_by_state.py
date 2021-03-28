@@ -14,7 +14,7 @@ if __name__ == "__main__":
         db = MySQLdb.connect(host=my_host, user=my_user,
                              passwd=my_passwd, db=my_db)
         cursor = db.cursor()
-        cursor.execute("SELECT cities.id, cities.name, states.id \
+        cursor.execute("SELECT cities.id, cities.name, states.name \
         FROM states INNER JOIN cities ON states.id = cities.state_id \
         ORDER BY cities.id")
         rows = cursor.fetchall()
