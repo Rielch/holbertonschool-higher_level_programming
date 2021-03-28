@@ -18,7 +18,7 @@ if __name__ == "__main__":
         cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
         rows = cursor.fetchall()
         for row in rows:
-            if row[0][1] is 'N':
+            if row[1][0] is 'N':
                 print(row)
     except MySQLdb.Error as e:
         try:
