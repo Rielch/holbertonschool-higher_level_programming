@@ -11,9 +11,9 @@ if __name__ == "__main__":
                            .format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name == "{}".format(argv[4]))
-    if state:
-        print(state.id)
+    ins = session.query(State).filter(State.name == argv[4]).first()
+    if not ins:
+        print("Not found")
     else:
-        print('Not found')
+        print(ins.id)
     session.close()
