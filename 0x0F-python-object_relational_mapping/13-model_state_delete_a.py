@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""deletes the State objects that contain 'a' from the database hbtn_0e_6_usa"""
+"""deletes the State objects that contain 'a'
+from the database hbtn_0e_6_usa"""
 from sys import argv
 from sqlalchemy import (create_engine)
 from model_state import Base, State
@@ -12,7 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     states_delete = session.query(State).filter(State.name.like('%a%'))
-    for state in state_delete:
+    for state in states_delete:
         session.delete(state)
     session.commit()
     session.close()
