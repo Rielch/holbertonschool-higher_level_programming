@@ -11,7 +11,7 @@ if __name__ == "__main__":
                            .format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name == "%s" (argv[4], ))
+    state = session.query(State).filter(State.name == "{}".format(argv[4]))
     if state:
         print(state.id)
     else:
