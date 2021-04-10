@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         dic = {'q': sys.argv[1]}
 
-    r = requests.post('http://0.0.0.0:5000/search_user', data = dic)
+    r = requests.post('http://0.0.0.0:5000/search_user', data=dic)
 
     try:
         json = r.json()
@@ -20,6 +20,6 @@ if __name__ == "__main__":
         else:
             json_id = json.get(id)
             json_name = json.get(name)
-            print("[<{}>] <{}>".format(json_id, json_name))
+            print("[{}] {}".format(json_id, json_name))
     except ValueError:
         print("Not a valid JSON")
