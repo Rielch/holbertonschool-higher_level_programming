@@ -3,9 +3,9 @@
 const fs = require('fs');
 
 fs.readFile(process.argv[2], 'utf-8', (error, text) => {
-    if (error) {
-	console.error(error);
-	return;
-    }
-    console.log(text.toString());
+  if (error) {
+    console.error(error);
+    return;
+  }
+  console.log(text.toString());
 });
