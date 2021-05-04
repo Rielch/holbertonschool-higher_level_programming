@@ -1,0 +1,1 @@
+Gabriel Prochnau`s directory for "0x14. JavaScript - Web scraping" from Holberton School
