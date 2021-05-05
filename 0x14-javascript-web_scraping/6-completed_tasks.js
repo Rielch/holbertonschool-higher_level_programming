@@ -12,7 +12,7 @@ request(url, (error, data, body) => {
   let i = 0;
   const users = {};
   for (i = 0; i < tasks.length; i++) {
-    if (tasks[i].completed === true) {
+    if (tasks[i].completed) {
       if (!users[tasks[i].userId]) {
         users[tasks[i].userId] = 0;
       }
