@@ -9,4 +9,5 @@ if __name__ == "__main__":
                      .format(sys.argv[2], sys.argv[1]))
     http = r.json()
     for element in http:
-        print('{}: {}'.format(element['sha'], element['commit']['author']['name']))
+        print('{}: {}'.format(element['sha'],
+                              element['commit']['author']['name']))
